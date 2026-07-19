@@ -5,5 +5,10 @@ code and tweet
 {% endblock %}
 
 {% block content %}
-<h1 class="text-center mt-4">Welcome to our Project</h1>
+<h1 class="text-center mt-4">Are you sure you want to delete this tweet?</h1>
+<form  method="post">
+    {% csrf_token %} 
+    <button class="btn btn-danger">Delete</button>
+    <a href="{% url 'tweet_list' %}" class="btn btn-success">Cancel</a>
+</form>
 {% endblock %}
